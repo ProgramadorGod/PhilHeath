@@ -21,6 +21,9 @@ public class Users {
 
     }
 
+    public Users() {
+
+    }
 
 
     private void CreateUser(){
