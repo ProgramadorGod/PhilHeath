@@ -21,9 +21,7 @@ public class Users {
 
     }
 
-    public Users() {
 
-    }
 
     private void CreateUser(){
         UserStuff[0] = name;
@@ -39,6 +37,7 @@ public class Users {
 
     public void Execute(){
         CreateUser();
+
 
     }
 
