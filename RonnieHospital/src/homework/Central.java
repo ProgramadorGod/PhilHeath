@@ -1,5 +1,6 @@
 package homework;
 
+import javax.print.Doc;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -53,19 +54,12 @@ public class Central {
         for (int i = 0; i < Keeper.size(); i++) {
             for (int j = 0; j < Keeper.get(i).size(); j++) {
                 if(Keeper.get(i).get(j) == "Patient"){
-                    System.out.println("Please insert the disease of the patient " + Keeper.get(i).get(0)+ " : ");
-                    disease = in.nextLine();
-                    Patient patient = new Patient(name, address, occupation,age, disease);
+                    Patient patient = new Patient(Keeper.get(i));
 
                 }else if (Keeper.get(i).get(j) == "Doctor"){
-                    System.out.println("Please insert the speciality of the doctor " + Keeper.get(i).get(0)+ " : ");
-                    speciality = in.nextLine();
-
-
+                    Doctor doctor = new Doctor(Keeper.get(i));
                 }
-
             }
-
         }
 
     }
