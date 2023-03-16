@@ -58,9 +58,16 @@ public class Central {
 
                 }else if (Keeper.get(i).get(j) == "Doctor"){
                     Doctor doctor = new Doctor(Keeper.get(i));
+                    Dating xDD = new Dating(doctor.getDoctorsList());
+
+
                 }
             }
         }
+
+
+
+
 
     }
 }
