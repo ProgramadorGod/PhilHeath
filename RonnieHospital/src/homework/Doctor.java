@@ -11,7 +11,7 @@ public class Doctor extends Users{
 
     private void Container(){
         System.out.println("Inserting xd :" + xd);
-        System.out.println("doctorslist: " + DoctorsList);
+        System.out.println("Doctors List : " + DoctorsList);
         
 
     }
@@ -20,6 +20,7 @@ public class Doctor extends Users{
         Scanner in = new Scanner(System.in);
         this.xd = xd;
         this.DoctorsList = DoctorsList;
+
         System.out.println("Please insert the speciality of the doctor " + xd.get(0) + " : ");
         speciality = in.nextLine();
         xd.add(speciality);
