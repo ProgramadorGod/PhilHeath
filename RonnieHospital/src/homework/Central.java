@@ -41,7 +41,6 @@ public class Central {
 
         }
 
-
         Users DefaultUser1 = new Users("Ronnie", "Street 2", "Patient", 30);
         DefaultUser1.Execute();
         Keeper.add(DefaultUser1.getUserProps());

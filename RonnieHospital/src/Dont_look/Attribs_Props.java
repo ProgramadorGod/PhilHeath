@@ -5,6 +5,12 @@ public class Attribs_Props {
     private int value3;
     public int vulue4;
     String value5;
+    protected String a = "random";
+
+    protected void RandomMethod(){
+        System.out.println("random method's running...");
+    }
+
 
     public void LuisMethod(){
 
