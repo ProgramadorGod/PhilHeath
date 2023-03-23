@@ -13,6 +13,7 @@ public class HospitalSystem {
         ArrayList<ArrayList> UsersList = new ArrayList<>();
         ArrayList<ArrayList> PatientsList = new ArrayList<>();
         ArrayList<ArrayList> DoctorsList = new ArrayList<>();
+        ArrayList<ArrayList> DatesList = new ArrayList<>();
         int fat = 0;
         int counter = 0;
 
@@ -79,16 +80,17 @@ public class HospitalSystem {
                     break;
 
                 case 2:
+
                     System.out.println("This are the patients waiting for a date : ");
-                    int PatientNum = 1;
+                    int PatientNum = 0;
                     int Selected = 0;
                     for (int i = 0; i < PatientsList.size() ; i++) {
 
                         fat = PatientsList.get(i).size();
                         if(fat != 0) {
                             for (int j = 0; j < PatientsList.get(i).size(); j++) {
-                                System.out.println("Patient #"+String.valueOf(PatientNum) + " : " + PatientsList.get(i).get(j));
                                 PatientNum += 1;
+                                System.out.println("Patient #"+String.valueOf(PatientNum) + " : " + PatientsList.get(i).get(j));
                             }
                         }else{
                             System.out.println("Any patient to make date.");
@@ -96,18 +98,20 @@ public class HospitalSystem {
                         }
                     };
 
-                    if(PatientNum>1){
+                    if(PatientNum>0){
                         System.out.print("Please insert the number of the patient you're gonna program a date: ");
                         while (Selected == 0 || Selected < 0 || Selected >PatientNum){
                             try{
                                 Selected = in.nextInt();
-                                if(Selected <= 0 || Selected >PatientNum){
+                                if(Selected <= 0 || Selected>PatientNum){
                                     System.out.println("Try again with a valid patient");
+
                                 }
 
                             }catch (Exception e){
                                 System.out.println("Error. Try Again...");
                                 in.nextLine();
+                                Selected = 0;
                             }
                         }
                         System.out.println("\nPatient #"+Selected + " chosen: " + PatientsList.get(Selected-1).get(0));
@@ -119,33 +123,33 @@ public class HospitalSystem {
 
 
                     System.out.println("Now choose the doctor.");
-                    int DoctorNum = 1;
+                    int DoctorNum = 0;
                     Selected = 0;
                     for (int i = 0; i < DoctorsList.size() ; i++) {
 
                         fat = DoctorsList.get(i).size();
                         if(fat != 0) {
                             for (int j = 0; j < DoctorsList.get(i).size(); j++) {
-                                System.out.println("Doctor #"+String.valueOf(DoctorNum) + " : " + DoctorsList.get(i).get(j));
                                 DoctorNum += 1;
-                                System.out.println("i : "+ i + " j: " + j );
+                                System.out.println("Doctor #"+String.valueOf(DoctorNum) + " : " + DoctorsList.get(i).get(j));
                             }
                         }else{
                             System.out.println("Any patient to make date.");
                         }
                     };
-                    if(DoctorNum>1){
+                    if(DoctorNum>0){
                         System.out.print("Please insert the number of the doctor you're gonna program a date: ");
                         while (Selected == 0 || Selected < 0 || Selected >DoctorNum){
                             try{
                                 Selected = in.nextInt();
-                                if(Selected == 0 || Selected < 0 || Selected > DoctorNum){
+                                if(Selected <= 0 || Selected > DoctorNum){
                                     System.out.println("Try again with a valid doctor");
                                 }
 
                             }catch (Exception e){
                                 System.out.println("Error. Try Again...");
                                 in.nextLine();
+                                Selected = 0;
                             }
                         }
                         System.out.println("\nDoctor #"+Selected + " chosen: " + DoctorsList.get(Selected-1).get(0));
