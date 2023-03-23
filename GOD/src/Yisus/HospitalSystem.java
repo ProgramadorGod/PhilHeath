@@ -9,11 +9,11 @@ public class HospitalSystem {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         ArrayList<ArrayList> UsersList = new ArrayList<>();
-
         ArrayList<ArrayList> PatientsList = new ArrayList<>();
         ArrayList<ArrayList> DoctorsList = new ArrayList<>();
         int fat = 0;
         int counter = 0;
+
 
 
         while (true){
@@ -23,6 +23,7 @@ public class HospitalSystem {
             System.out.println("2 . Generate date.");
             System.out.println("3 . Get users");
             System.out.println("4 . Exit.");
+            
             int option = in.nextInt();
             switch (option){
                 case 1:
@@ -49,6 +50,8 @@ public class HospitalSystem {
                     break;
 
                 case 2:
+                    System.out.println("This are the patients waiting for a date : ");
+
 
                     break;
 
@@ -61,7 +64,7 @@ public class HospitalSystem {
                             fat = PatientsList.get(i).size();
                             if(fat != 0) {
                                 for (int j = 0; j < PatientsList.get(i).size(); j++) {
-                                    System.out.println(PatientsList.get(i).get(j));
+                                        System.out.println(PatientsList.get(i).get(j));
                                 }
                             }else{
                                 System.out.println("Patients list it's empty");
@@ -91,14 +94,12 @@ public class HospitalSystem {
                     System.exit(0);
                     break;
             }
-
-
-
         }
+    }
 
-
-
+    private static void GetLists() {
 
     }
+
 
 }
