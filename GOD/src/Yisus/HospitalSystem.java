@@ -1,19 +1,22 @@
 package Yisus;
 
-import javax.print.Doc;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Date;
 
 public class HospitalSystem {
 
     private static Object option;
     static boolean Correct = false;
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         Scanner in = new Scanner(System.in);
         ArrayList<ArrayList> UsersList = new ArrayList<>();
         ArrayList<ArrayList> PatientsList = new ArrayList<>();
         ArrayList<ArrayList> DoctorsList = new ArrayList<>();
-        ArrayList<ArrayList> DatesList = new ArrayList<>();
+        ArrayList<ArrayList> DatesList2 = new ArrayList<>();
+
         int fat = 0;
         int counter = 0;
 
@@ -122,9 +125,9 @@ public class HospitalSystem {
 
 
 
-                    System.out.println("Now choose the doctor.");
+                    System.out.println("\nNow choose the doctor.");
                     int DoctorNum = 0;
-                    Selected = 0;
+                    int Selected2 = 0;
                     for (int i = 0; i < DoctorsList.size() ; i++) {
 
                         fat = DoctorsList.get(i).size();
@@ -139,10 +142,10 @@ public class HospitalSystem {
                     };
                     if(DoctorNum>0){
                         System.out.print("Please insert the number of the doctor you're gonna program a date: ");
-                        while (Selected == 0 || Selected < 0 || Selected >DoctorNum){
+                        while (Selected2 == 0 || Selected2 < 0 || Selected2 >DoctorNum){
                             try{
-                                Selected = in.nextInt();
-                                if(Selected <= 0 || Selected > DoctorNum){
+                                Selected2 = in.nextInt();
+                                if(Selected2 <= 0 || Selected2 > DoctorNum){
                                     System.out.println("Try again with a valid doctor");
                                 }
 
@@ -152,15 +155,30 @@ public class HospitalSystem {
                                 Selected = 0;
                             }
                         }
-                        System.out.println("\nDoctor #"+Selected + " chosen: " + DoctorsList.get(Selected-1).get(0));
+                        System.out.println("\nDoctor #"+Selected2 + " chosen: " + DoctorsList.get(Selected2-1).get(0));
+
                     }else{
                         System.out.println("There's no doctors to make the date");
                     }
+                    if(DoctorNum > 0 && PatientNum >0){
+                        ArrayList<Object> DatesList = new ArrayList<>();
+                        System.out.println("Insert date time");
+                        System.out.println("Example : 11:02:23 11:20");
+                        String fechaString = in.nextLine();
+                        fechaString = in.nextLine();
 
+                        DatesList.add(PatientsList.get(Selected-1).get(0));
+                        DatesList.add(DoctorsList.get(Selected2-1).get(0));
+                        DatesList.add(fechaString);
+                        DatesList2.add(DatesList);
 
+                        System.out.print("The dates programmed are these : ");
+                        for (int i = 0; i < DatesList2.size(); i++) {
+                            System.out.println(DatesList2.get(i));
 
+                        }
 
-
+                    }
 
 
 
