@@ -21,12 +21,13 @@ public abstract class Users {
         System.out.print("User ID: ");
         ID = in.nextLine();
         System.out.print("User Age: ");
-        while (Correct == false){
+        while (!Correct){
             try {
                 age = in.nextInt();
                 Correct = true;
             }catch (Exception e){
-                System.out.println("");
+                System.out.println("ERROR, Insert a valid number. Try again ...");
+                in.nextLine(); //Clean the buffer
             }
         }
 
@@ -47,11 +48,13 @@ public abstract class Users {
         if(random.get(0) == "Patient"){
             Patients.add(random);
         }
-        if(random.get(0) == "Doctor"){
+        if(random.get(0) == "Doctor") {
             Doctors.add(random);
         }
 
+
     }
+
 
 
 

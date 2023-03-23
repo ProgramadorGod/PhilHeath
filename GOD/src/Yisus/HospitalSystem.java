@@ -49,7 +49,7 @@ public class HospitalSystem {
                     break;
 
                 case 2:
-                    System.out.println("option 2 empty\n");
+
                     break;
 
                 case 3:
@@ -86,6 +86,10 @@ public class HospitalSystem {
                     }
                     break;
 
+
+                case 4:
+                    System.exit(0);
+                    break;
             }
 
 

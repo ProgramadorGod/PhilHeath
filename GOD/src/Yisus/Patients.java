@@ -17,7 +17,22 @@ public class Patients extends Users{
         System.out.print("Patient Disease: ");
         Disease = in.nextLine();
         System.out.println("Patient Range: 1(Maximum priority) / 2(Basic) / 3(Low Priority) ");
-        Range = in.nextInt();
+        boolean Correct = false;
+        while (!Correct){
+            try {
+
+                Range = in.nextInt();
+                if(Range >= 1 && Range <= 3){
+                    Correct = true;
+
+                }else{
+                    System.out.print("Please choose one of the possible options (1/2/3): ");
+                }
+            }catch (Exception e){
+                System.out.println("ERROR, Insert a valid number. Try again ...");
+                in.nextLine(); //Clean the buffer
+            }
+        }
         ArrayList<String> User = new ArrayList<>();
         User.add("Patient");
         User.add(this.Name);
