@@ -1,10 +1,8 @@
 package Yisus;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Date;
 
 public class HospitalSystem {
 
