@@ -1,21 +1,20 @@
 package NewTry;
-import com.sun.jdi.Value;
 
 import java.util.Scanner;
 import java.lang.reflect.Field;
 
 public class User {
-    private String Name, Address, ID, PhoneNumber;
-    private int Age, Height, Weight;
+    protected String Name, Address, ID, PhoneNumber;
+    protected int Age, Height, Weight;
 
-    public User(){
+
+    public User() throws IllegalAccessException{
 
     }
 
-
-    public static void main(String[] args) throws IllegalAccessException {
-        User user1 = new User();
+    public void GetUserDates() throws IllegalAccessException {
         Scanner in = new Scanner(System.in);
+        User user1 = new User();
         Class<?> myClass = user1.getClass();
         Field[] fields = myClass.getDeclaredFields();
         for (Field field : fields) {
@@ -30,7 +29,7 @@ public class User {
                         field.set(user1, IntValue);
                         ValidInt = true;
                     } catch (Exception e) {
-                        if(field.getName() == "Height"){
+                        if (field.getName() == "Height") {
                             System.out.println("Insert the height in Centimeters...");
                         }
 
@@ -41,28 +40,24 @@ public class User {
 
             } else {
                 String Value = "";
-                while(Value == ""){
+                while (Value == "") {
                     Value = in.nextLine();
                     field.setAccessible(true);
                     field.set(user1, Value);
-                    if(Value == ""){
+                    if (Value == "") {
                         System.out.print("Please insert a valid " + field.getName() + " : ");
                     }
                 }
-
             }
-
-
         }
-
-        for (Field field: fields) {
-            System.out.println(field.getName() + " :" +field.get(user1));
-        }
-
-
-
-
     }
+
+
+
+
+
+
+
 
 
 
