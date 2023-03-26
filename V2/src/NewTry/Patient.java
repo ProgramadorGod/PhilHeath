@@ -10,7 +10,6 @@ public class Patient extends User{
 
 
     public Patient(){
-
         Scanner in = new Scanner(System.in);
         Patient patient = new Patient();
         Class<?> patClass = patient.getClass();
